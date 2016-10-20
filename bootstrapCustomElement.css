@@ -1,0 +1,26 @@
+x-dropdown {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+x-dropdown:unresolved {
+  opacity: 0;
+}
+
+x-button-dropdown {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+x-button-dropdown:unresolved {
+  opacity: 0;
+}
+
+x-split-button-dropdown {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+x-split-button-dropdown:unresolved {
+  opacity: 0;
+}
