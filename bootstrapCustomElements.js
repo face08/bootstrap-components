@@ -135,7 +135,7 @@ class Navbar extends HTMLElement {
       `<nav class="navbar navbar-default">
          <div class="container-fluid">
            <div class="navbar-header">
-             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#{id}" aria-expanded="false">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#${id}" aria-expanded="false">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
@@ -148,6 +148,21 @@ class Navbar extends HTMLElement {
            </div>
          </div>
        </nav>`;
+  }
+}
+
+class NavbarMenu extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    var content = this.innerHTML;
+    this.outerHTML =
+      `<ul class="nav navbar-nav">
+        ${content}
+       </ul>`
   }
 }
 
@@ -199,7 +214,7 @@ ${content}
 
 }
 
-class DropDownItem extends HTMLElement {
+class MenuItem extends HTMLElement {
 
   constructor() {
     super();
@@ -211,6 +226,27 @@ class DropDownItem extends HTMLElement {
     this.outerHTML =
       `<li><a href="${href}">${content}</a></li>`;
   }
+}
+
+class NavbarForm extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    var placeholderText = this.getAttribute('placeholder-text') || '';
+    var buttonText = this.getAttribute('button-text') || '';
+
+    this.outerHTML =
+      `<form class="navbar-form navbar-left">
+         <div class="form-group">
+           <input type="text" class="form-control" placeholder="${placeholderText}">
+         </div>
+         <button type="submit" class="btn btn-default">${buttonText}</button>
+       </form>`;
+  }
+
 }
 
 class DropDownHeader extends HTMLElement {
@@ -277,9 +313,12 @@ document.registerElement('x-alert', Alert);
 document.registerElement('x-badge', Badge);
 document.registerElement('x-divider', Divider);
 document.registerElement('x-progress-bar', ProgressBar);
-document.registerElement('x-dropdown-item', DropDownItem);
+document.registerElement('x-menu-item', MenuItem);
 document.registerElement('x-dropdown-header', DropDownHeader);
 document.registerElement('x-dropdown', Dropdown);
 document.registerElement('x-dropup', Dropup);
 document.registerElement('x-button-dropdown', ButtonDropdown);
+document.registerElement('x-navbar', Navbar);
+document.registerElement('x-navbar-menu', NavbarMenu);
+document.registerElement('x-navbar-form', NavbarForm);
 document.registerElement('x-split-button-dropdown', SplitButtonDropdown);

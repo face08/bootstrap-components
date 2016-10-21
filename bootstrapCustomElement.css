@@ -24,3 +24,12 @@ x-split-button-dropdown {
 x-split-button-dropdown:unresolved {
   opacity: 0;
 }
+
+x-navbar {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+x-navbar:unresolved {
+  opacity: 0;
+}
