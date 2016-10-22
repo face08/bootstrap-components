@@ -246,6 +246,167 @@ class NavbarMenuItem extends HTMLElement {
   }
 }
 
+class NavbarPills extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    var stacked = this.getAttribute('stacked') || 'false';
+    var justified = this.getAttribute('justified') || 'false';
+    var content = this.innerHTML;
+
+    var classAttribute = 'nav nav-pills';
+
+    if (stacked === 'true') {
+      classAttribute += ' nav-stacked';
+    }
+
+    if (justified === 'true') {
+      classAttribute += ' nav-justified';
+    }
+
+    classAttribute = `class="${classAttribute}"`;
+
+    this.outerHTML =
+      `<ul ${classAttribute}>
+         ${content}
+       </ul>`;
+  }
+}
+
+class NavPill extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    var href = this.getAttribute('href') || '#';
+    var active = this.getAttribute('active') || 'false';
+    var disabled = this.getAttribute('disabled') || 'false';
+    var classAttribute = '';
+
+    if (active === 'true') {
+      classAttribute = 'active';
+    }
+
+    if (disabled === 'true') {
+      classAttribute = ' disabled';
+    }
+
+    classAttribute = ` class="${classAttribute.trim()}"`;
+
+    var content = this.innerHTML;
+    this.outerHTML =
+      `<li role="presentation"${classAttribute}>
+         <a href="${href}">${content}</a>
+       </li>`;
+  }
+}
+
+class NavPillDropdown extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let title = this.getAttribute('title') || '';
+    let href = this.getAttribute('href') || '#';
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<li role="presentation} class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="${href}" role="button" aria-haspopup="true" aria-expanded="false">
+           ${title} <span class="caret"></span>
+         </a>
+         <ul class="dropdown-menu">
+           ${content}
+         </ul>
+       </li>`;
+  }
+}
+
+class NavbarTabs extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    var justified = this.getAttribute('justified') || 'false';
+    var content = this.innerHTML;
+
+    var classAttribute = 'nav nav-tabs';
+
+    if (justified === 'true') {
+      classAttribute += ' nav-justified';
+    }
+
+    classAttribute = `class="${classAttribute}"`;
+
+    this.outerHTML =
+      `<ul ${classAttribute}>
+         ${content}
+       </ul>`;
+  }
+}
+
+class NavTab extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    var href = this.getAttribute('href') || '#';
+    var active = this.getAttribute('active') || 'false';
+    var disabled = this.getAttribute('disabled') || 'false';
+    var classAttribute = '';
+
+    if (active === 'true') {
+      classAttribute = 'active';
+    }
+
+    if (disabled === 'true') {
+      classAttribute = ' disabled';
+    }
+
+    classAttribute = ` class="${classAttribute.trim()}"`;
+
+    var content = this.innerHTML;
+    this.outerHTML =
+      `<li role="presentation"${classAttribute}>
+         <a href="${href}">${content}</a>
+       </li>`;
+  }
+}
+
+class NavTabDropdown extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let title = this.getAttribute('title') || '';
+    let href = this.getAttribute('href') || '#';
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<li role="presentation} class="dropdown">
+         <a class="dropdown-toggle" data-toggle="dropdown" href="${href}" role="button" aria-haspopup="true" aria-expanded="false">
+           ${title} <span class="caret"></span>
+         </a>
+         <ul class="dropdown-menu">
+           ${content}
+         </ul>
+       </li>`;
+  }
+}
+
 class DropdownItem extends HTMLElement {
 
   constructor() {
@@ -437,4 +598,10 @@ document.registerElement('x-navbar-dropdown', NavbarDropdown);
 document.registerElement('x-navbar-button', NavbarButton);
 document.registerElement('x-navbar-text', NavbarText);
 document.registerElement('x-navbar-link', NavbarLink);
+document.registerElement('x-navbar-pills', NavbarPills);
+document.registerElement('x-nav-pill', NavPill);
+document.registerElement('x-nav-pill-dropdown', NavPillDropdown);
+document.registerElement('x-navbar-tabs', NavbarTabs);
+document.registerElement('x-nav-tab', NavTab);
+document.registerElement('x-nav-tab-dropdown', NavTabDropdown);
 document.registerElement('x-split-button-dropdown', SplitButtonDropdown);

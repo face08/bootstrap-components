@@ -33,3 +33,21 @@ x-navbar {
 x-navbar:unresolved {
   opacity: 0;
 }
+
+x-navbar-pills {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+x-navbar-pills:unresolved {
+  opacity: 0;
+}
+
+x-navbar-tabs {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+x-navbar-tabs:unresolved {
+  opacity: 0;
+}
