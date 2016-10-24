@@ -58,6 +58,37 @@ class Badge extends HTMLElement {
 
 }
 
+class BreadCrumbs extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<ol class="breadcrumb">
+         ${content}
+       </ol>`
+  }
+}
+
+class BreadCrumb extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let href = this.getAttribute('href') || '#';
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<li><a href="${href}">${content}</li>`
+  }
+}
+
 class ButtonDropdown extends HTMLElement {
 
   constructor() {
@@ -414,10 +445,77 @@ class DropdownItem extends HTMLElement {
   }
 
   createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var content = this.innerHTML;
+    let href = this.getAttribute('href') || '#';
+    let content = this.innerHTML;
     this.outerHTML =
       `<li><a href="${href}">${content}</a></li>`;
+  }
+}
+
+class LinkListGroup extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<div class="list-group">
+         ${content}
+       </div>`;
+  }
+}
+
+class LinkListGroupItem extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let href = this.getAttribute('href') || '#';
+    let active = this.getAttribute('active') || 'false';
+    let content = this.innerHTML;
+    var classAttribute = "list-group-item";
+
+    if (active ==='true') {
+      classAttribute = `${classAttribute} active`;
+    }
+
+    classAttribute = ` class="${classAttribute}"`;
+    this.outerHTML =
+      `<a href="${href}"${classAttribute}>${content}</a>`;
+  }
+}
+
+class ListGroup extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<ul class="list-group">
+         ${content}
+       </ul>`;
+  }
+}
+
+class ListGroupItem extends HTMLElement {
+
+  constructor() {
+    super();
+  }
+
+  createdCallback() {
+    let content = this.innerHTML;
+
+    this.outerHTML =
+      `<li class="list-group-item">${content}</li>`;
   }
 }
 
@@ -583,6 +681,8 @@ class Dropdown extends HTMLElement {
 
 document.registerElement('x-alert', Alert);
 document.registerElement('x-badge', Badge);
+document.registerElement('x-breadcrumbs', BreadCrumbs);
+document.registerElement('x-breadcrumb', BreadCrumb);
 document.registerElement('x-divider', Divider);
 document.registerElement('x-progress-bar', ProgressBar);
 document.registerElement('x-nav-menu-item', NavbarMenuItem);
@@ -591,6 +691,10 @@ document.registerElement('x-dropdown', Dropdown);
 document.registerElement('x-dropdown-item', DropdownItem);
 document.registerElement('x-dropup', Dropup);
 document.registerElement('x-button-dropdown', ButtonDropdown);
+document.registerElement('x-link-list-group', LinkListGroup);
+document.registerElement('x-link-list-group-item', LinkListGroupItem);
+document.registerElement('x-list-group', ListGroup);
+document.registerElement('x-list-group-item', ListGroupItem);
 document.registerElement('x-navbar', Navbar);
 document.registerElement('x-navbar-menu', NavbarMenu);
 document.registerElement('x-navbar-form', NavbarForm);
