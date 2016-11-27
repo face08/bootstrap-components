@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Custom Element</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrapCustomElement.css">
+  </head>
+  <body>
+    <div id="content">
+      <x-container>
+      <x-navbar id="example-navbar" brand-text="Brand">
+        <x-navbar-menu>
+          <x-nav-menu-item>Link</x-nav-menu-item>
+          <x-nav-menu-item>AnotherLink</x-nav-menu-item>
+        </x-navbar-menu>
+        <x-navbar-form placeholder-text="Search" button-text="Submit"></x-navbar-form>
+        <x-navbar-dropdown title="Dropdown">
+          <x-dropdown-item href="#">Action</x-dropdown-item>
+          <x-dropdown-item href="#">Another Action</x-dropdown-item>
+          <x-dropdown-item href="#">Something else here</x-dropdown-item>
+          <x-divider></x-divider>
+          <x-dropdown-item href="#">Separated link</x-dropdown-item>
+        </x-navbar-dropdown>
+      </x-navbar>
+      <x-navbar-pills>
+        <x-nav-pill active="true">Home</x-nav-pill>
+        <x-nav-pill disabled="true">Profile</x-nav-pill>
+        <x-nav-pill>Messages</x-nav-pill>
+        <x-nav-pill-dropdown title="Dropdown">
+          <x-dropdown-item href="#">Action</x-dropdown-item>
+          <x-dropdown-item href="#">Another Action</x-dropdown-item>
+          <x-dropdown-item href="#">Something else here</x-dropdown-item>
+          <x-divider></x-divider>
+          <x-dropdown-item href="#">Separated link</x-dropdown-item>
+        </x-nav-pill-dropdown>
+      </x-navbar-pills>
+      <x-progress-bar data-min="0" data-max="100" data-current="60"></x-progress-bar>
+      <x-dropdown id="dropdownMenu1" title="Dropdown">
+        <x-dropdown-header>Dropdown Header</x-dropdown-header>
+        <x-dropdown-item href="#">Action</x-dropdown-item>
+        <x-dropdown-item href="#">Another Action</x-dropdown-item>
+        <x-dropdown-item href="#">Something else here</x-dropdown-item>
+        <x-divider></x-divider>
+        <x-dropdown-item href="#">Separated link</x-dropdown-item>
+      </x-dropdown>
+      <x-button-dropdown title="Default">
+        <x-dropdown-header>Dropdown Header</x-dropdown-header>
+        <x-dropdown-item href="#">Action</x-dropdown-item>
+        <x-dropdown-item href="#">Another Action</x-dropdown-item>
+        <x-dropdown-item href="#">Something else here</x-dropdown-item>
+        <x-divider></x-divider>
+        <x-dropdown-item href="#">Separated link</x-dropdown-item>
+      </x-button-dropdown>
+      <x-split-button-dropdown title="Default">
+        <x-dropdown-header>Dropdown Header</x-dropdown-header>
+        <x-dropdown-item href="#">Action</x-dropdown-item>
+        <x-dropdown-item href="#">Another Action</x-dropdown-item>
+        <x-dropdown-item href="#">Something else here</x-dropdown-item>
+        <x-divider></x-divider>
+        <x-dropdown-item href="#">Separated link</x-dropdown-item>
+      </x-split-button-dropdown>
+      <button class="btn btn-primary" type="button">
+        Messages <x-badge>4</x-badge>
+      </button>
+      <x-well>A test well</x-well>
+      <x-panel panel-type="danger">
+        <x-panel-heading>
+          <x-panel-title-3>Panel heading with a title.</x-panel-title-3>
+        </x-panel-heading>
+        <x-panel-body>
+          Basic panel example
+        </x-panel-body>
+        <x-panel-footer>
+          Panel footerUnexpected
+        </x-panel-footer>
+      </x-panel>
+      <x-jumbotron>
+        <h1>Hello World</h1>
+        <p>This is a demo jumbotron-style component</p>
+      </x-jumbotron>
+      <x-pager>
+        <x-pager-previous show-arrow="true">Previous</x-pager-previous>
+        <x-pager-next show-arrow="true">Next</x-pager-next>
+      </x-pager>
+      <x-media>
+        <x-media-object horizontal-position="left" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNThhNGFjM2I3YSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1OGE0YWMzYjdhIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMi41NDY4NzUiIHk9IjM2LjUiPjY0eDY0PC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="image"></x-media-object>
+        <x-media-body>
+          <x-media-header4>Media header</x-media-header4>
+          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+          <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </x-media-body>
+      </x-media>
+
+      <div class="row">
+        <div class="col-md-3 col-xs-6">
+          <x-thumbnail src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU4YTRlZTQ2NDkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNThhNGVlNDY0OSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTY4NzUiIHk9Ijk3LjIiPjMxOXgxODA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" />
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <x-thumbnail src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU4YTRlZTQ2NDkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNThhNGVlNDY0OSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTY4NzUiIHk9Ijk3LjIiPjMxOXgxODA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" />
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <x-thumbnail src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU4YTRlZTQ2NDkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNThhNGVlNDY0OSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTY4NzUiIHk9Ijk3LjIiPjMxOXgxODA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" />
+        </div>
+        <div class="col-md-3 col-xs-6">
+          <x-thumbnail src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU4YTRlZTQ2NDkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNThhNGVlNDY0OSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTY4NzUiIHk9Ijk3LjIiPjMxOXgxODA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" />
+        </div>
+      </div>
+      </x-container>
+    </div>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrapCustomElements.js"></script>
+  </body>
+</html>
