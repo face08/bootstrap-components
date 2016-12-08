@@ -1,0 +1,30 @@
+{
+  "name": "bootstrap-components",
+  "version": "1.0.0",
+  "description": "Creates bootstrap components as custom components.",
+  "main": "bootstrapCustomElements.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnowley/bootstrap-components.git"
+  },
+  "keywords": [
+    "customElements"
+  ],
+  "author": "Raymond Nowley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rnowley/bootstrap-components/issues"
+  },
+  "homepage": "https://github.com/rnowley/bootstrap-components#readme",
+  "devDependencies": {
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+  }
+}
