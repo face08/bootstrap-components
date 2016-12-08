@@ -1,107 +1,107 @@
 
 class Alert extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var dismissable = this.getAttribute('dismissable') || '';
-    var providedClass = this.getAttribute('class') || '';
-    var classAttribute = `class="alert ${providedClass}${dismissable === 'true' ? ' alert-dismissable' : ''}"`;
-    var content = this.innerHTML;
-
-    var dismissableContent = '';
-
-    if (dismissable === 'true') {
-      dismissableContent =
-        `<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-           <span aria-hidden="true">&times</span>
-         </button>`
+    constructor() {
+        super();
     }
 
-    this.outerHTML =
-      `<div ${classAttribute} role="alert">
+    createdCallback() {
+        var dismissable = this.getAttribute('dismissable') || '';
+        var providedClass = this.getAttribute('class') || '';
+        var classAttribute = `class="alert ${providedClass}${dismissable === 'true' ? ' alert-dismissable' : ''}"`;
+        var content = this.innerHTML;
+
+        var dismissableContent = '';
+
+        if (dismissable === 'true') {
+            dismissableContent =
+                `<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times</span>
+         </button>`
+        }
+
+        this.outerHTML =
+            `<div ${classAttribute} role="alert">
         ${dismissableContent}
         ${content}
        </div>`
-  }
+    }
 }
 
 class AlertLink extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var content = this.innerHTML;
+    createdCallback() {
+        var href = this.getAttribute('href') || '#';
+        var content = this.innerHTML;
 
-    this, outerHTML =
-      `<a href="${href}" class="alert-link">${content}</a>`
-  }
+        this, outerHTML =
+            `<a href="${href}" class="alert-link">${content}</a>`
+    }
 }
 
 class Badge extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<span class="badge">${content}</span>`;
-  }
+        this.outerHTML =
+            `<span class="badge">${content}</span>`;
+    }
 
 }
 
 class BreadCrumbs extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let content = this.innerHTML;
+    createdCallback() {
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<ol class="breadcrumb">
+        this.outerHTML =
+            `<ol class="breadcrumb">
          ${content}
        </ol>`
-  }
+    }
 }
 
 class BreadCrumb extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let href = this.getAttribute('href') || '#';
-    let content = this.innerHTML;
+    createdCallback() {
+        let href = this.getAttribute('href') || '#';
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<li><a href="${href}">${content}</li>`
-  }
+        this.outerHTML =
+            `<li><a href="${href}">${content}</li>`
+    }
 }
 
 class ButtonDropdown extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var id = this.getAttribute('id') || '';
-    var title = this.getAttribute('title') || '';
-    var content = this.innerHTML;
+    createdCallback() {
+        var id = this.getAttribute('id') || '';
+        var title = this.getAttribute('title') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="btn-group">
+        this.outerHTML =
+            `<div class="btn-group">
          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            ${title}
            <span class="caret"></span>
@@ -110,21 +110,21 @@ class ButtonDropdown extends HTMLElement {
            ${content}
          </ul>
        </div>`
-  }
+    }
 }
 
 class SplitButtonDropdown extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var title = this.getAttribute('title') || '';
-    var content = this.innerHTML;
+    createdCallback() {
+        var title = this.getAttribute('title') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="btn-group">
+        this.outerHTML =
+            `<div class="btn-group">
          <button type="button" class="btn btn-default">${title}</button>
          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <span class="caret"></span>
@@ -134,215 +134,215 @@ class SplitButtonDropdown extends HTMLElement {
            ${content}
          </ul>
        </div>`
-  }
+    }
 }
 
 class Media extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<div class="media">
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<div class="media">
         ${content}
        </div>`;
-  }
+    }
 }
 
 class MediaBody extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<div class="media-body">
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<div class="media-body">
         ${content}
        </div>`;
-  }
+    }
 }
 
 class MediaHeading1 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h1 class="media">${content}</h1>`;
-  }
+        this.outerHTML =
+            `<h1 class="media">${content}</h1>`;
+    }
 }
 
 class MediaHeading2 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<h2 class="media">${content}</h2>`;
-  }
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<h2 class="media">${content}</h2>`;
+    }
 }
 
 class MediaHeading3 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<h3 class="media">${content}</h3>`;
-  }
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<h3 class="media">${content}</h3>`;
+    }
 }
 
 class MediaHeading4 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<h4 class="media">${content}</h4>`;
-  }
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<h4 class="media">${content}</h4>`;
+    }
 }
 
 class MediaHeading5 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<h5 class="media">${content}</h5>`;
-  }
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<h5 class="media">${content}</h5>`;
+    }
 }
 
 class MediaHeading6 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<h6 class="media">${content}</h6>`;
-  }
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<h6 class="media">${content}</h6>`;
+    }
 }
 
 class MediaObject extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var alignment = this.getAttribute('alignment') || '';
-    var horizontalPosition = this.getAttribute('horizontal-position') || 'left';
-    var href = this.getAttribute('href') || '#';
-    var src = this.getAttribute('src') || '';
-    var alt = this.getAttribute('alt') || '';
-
-    var classAttribute = 'media-left ';
-
-    if (horizontalPosition === 'right') {
-      classAttribute = 'media-right ';
+    constructor() {
+        super();
     }
 
-    switch(alignment) {
-      case 'top':
-        classAttribute += 'media-top ';
-        break;
-      case 'middle':
-        classAttribute += 'media-middle ';
-        break;
-      case 'bottom':
-        classAttribute += 'media-bottom ';
-        break;
-    }
+    createdCallback() {
+        var alignment = this.getAttribute('alignment') || '';
+        var horizontalPosition = this.getAttribute('horizontal-position') || 'left';
+        var href = this.getAttribute('href') || '#';
+        var src = this.getAttribute('src') || '';
+        var alt = this.getAttribute('alt') || '';
 
-    classAttribute = ` class="${classAttribute.trim()}"`;
+        var classAttribute = 'media-left ';
 
-    var content = this.innerHTML;
+        if (horizontalPosition === 'right') {
+            classAttribute = 'media-right ';
+        }
 
-    this.outerHTML =
-      `<div${classAttribute}>
+        switch (alignment) {
+            case 'top':
+                classAttribute += 'media-top ';
+                break;
+            case 'middle':
+                classAttribute += 'media-middle ';
+                break;
+            case 'bottom':
+                classAttribute += 'media-bottom ';
+                break;
+        }
+
+        classAttribute = ` class="${classAttribute.trim()}"`;
+
+        var content = this.innerHTML;
+
+        this.outerHTML =
+            `<div${classAttribute}>
         <a href="${href}">
           <img class="media-object" src="${src}" alt="${alt}">
         </a>
        </div>`;
-  }
+    }
 }
 
 class Divider extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    this.outerHTML =
-      `<li role="separator" class="divider"></li>`;
-  }
+    createdCallback() {
+        this.outerHTML =
+            `<li role="separator" class="divider"></li>`;
+    }
 
 }
 
 class Container extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="container">
+        this.outerHTML =
+            `<div class="container">
         ${content}
       </div>`
-  }
+    }
 
 }
 
 class Navbar extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var id = this.getAttribute('id') || '';
-    var position = this.getAttribute('position') || '';
-    var href = this.getAttribute('href') || '#';
-    var brandText = this.getAttribute('brand-text') || '';
-    var content = this.innerHTML;
-
-    var classAttribute = "navbar navbar-default";
-
-    if (position !== '') {
-      classAttribute += ` navbar-${position}`;
+    constructor() {
+        super();
     }
 
-    classAttribute = `class="${classAttribute}"`
+    createdCallback() {
+        var id = this.getAttribute('id') || '';
+        var position = this.getAttribute('position') || '';
+        var href = this.getAttribute('href') || '#';
+        var brandText = this.getAttribute('brand-text') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<nav ${classAttribute}>
+        var classAttribute = "navbar navbar-default";
+
+        if (position !== '') {
+            classAttribute += ` navbar-${position}`;
+        }
+
+        classAttribute = `class="${classAttribute}"`
+
+        this.outerHTML =
+            `<nav ${classAttribute}>
          <div class="container-fluid">
            <div class="navbar-header">
              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#${id}" aria-expanded="false">
@@ -358,168 +358,168 @@ class Navbar extends HTMLElement {
            </div>
          </div>
        </nav>`;
-  }
+    }
 }
 
 class NavbarMenu extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<ul class="nav navbar-nav">
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<ul class="nav navbar-nav">
         ${content}
        </ul>`
-  }
+    }
 }
 
 class ProgressBar extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var min = this.getAttribute('data-min') || '0';
-    var max = this.getAttribute('data-max') || '0';
-    var current = this.getAttribute('data-current') || '0';
-    var context = this.getAttribute('context') || '';
-    var striped = this.getAttribute('striped') || 'false';
-    var animate = this.getAttribute('animate') || 'false';
-    var content = this.innerHTML;
-
-    var classAttribute = "progress-bar";
-
-    if (context !== '') {
-      classAttribute += ` progress-bar-${context}`;
+    constructor() {
+        super();
     }
 
-    if (striped === 'true') {
-      classAttribute += " progress-bar-striped";
-    }
+    createdCallback() {
+        var min = this.getAttribute('data-min') || '0';
+        var max = this.getAttribute('data-max') || '0';
+        var current = this.getAttribute('data-current') || '0';
+        var context = this.getAttribute('context') || '';
+        var striped = this.getAttribute('striped') || 'false';
+        var animate = this.getAttribute('animate') || 'false';
+        var content = this.innerHTML;
 
-    if (animate === 'true') {
-      classAttribute += " active";
-    }
+        var classAttribute = "progress-bar";
 
-    classAttribute = `class="${classAttribute}"`;
+        if (context !== '') {
+            classAttribute += ` progress-bar-${context}`;
+        }
 
-    var screenReaderText = `${current}% Complete`;
+        if (striped === 'true') {
+            classAttribute += " progress-bar-striped";
+        }
 
-    if (context !== '') {
-      screenReaderText += ` (${context})`;Unexpected
-    }
+        if (animate === 'true') {
+            classAttribute += " active";
+        }
 
-    this.outerHTML =
-      `<div class="progress">
+        classAttribute = `class="${classAttribute}"`;
+
+        var screenReaderText = `${current}% Complete`;
+
+        if (context !== '') {
+            screenReaderText += ` (${context})`; Unexpected
+        }
+
+        this.outerHTML =
+            `<div class="progress">
          <div ${classAttribute} role="progressbar" aria-valuenow="${current}" aria-valuemin="${min}" aria-valuemax="${max}" style="width: ${current}%;">
           <span class="sr-only">${screenReaderText}</span>
           ${content}
          </div>
        </div>`;
-  }
+    }
 
 }
 
 class NavbarMenuItem extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var active = this.getAttribute('active') || '';
-    var content = this.innerHTML;
-    var screenReaderText = '';
-    var classAttribute = '';
-
-    if (active !== '') {
-      screenReaderText = ' <span class="sr-only">(current)</span>';
-      classAttribute = ' class="active"';
+    constructor() {
+        super();
     }
 
-    this.outerHTML =
-      `<li${classAttribute}><a href="${href}">${content}${screenReaderText}</a></li>`;
-  }
+    createdCallback() {
+        var href = this.getAttribute('href') || '#';
+        var active = this.getAttribute('active') || '';
+        var content = this.innerHTML;
+        var screenReaderText = '';
+        var classAttribute = '';
+
+        if (active !== '') {
+            screenReaderText = ' <span class="sr-only">(current)</span>';
+            classAttribute = ' class="active"';
+        }
+
+        this.outerHTML =
+            `<li${classAttribute}><a href="${href}">${content}${screenReaderText}</a></li>`;
+    }
 }
 
 class NavbarPills extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var stacked = this.getAttribute('stacked') || 'false';
-    var justified = this.getAttribute('justified') || 'false';
-    var content = this.innerHTML;
-
-    var classAttribute = 'nav nav-pills';
-
-    if (stacked === 'true') {
-      classAttribute += ' nav-stacked';
+    constructor() {
+        super();
     }
 
-    if (justified === 'true') {
-      classAttribute += ' nav-justified';
-    }
+    createdCallback() {
+        var stacked = this.getAttribute('stacked') || 'false';
+        var justified = this.getAttribute('justified') || 'false';
+        var content = this.innerHTML;
 
-    classAttribute = `class="${classAttribute}"`;
+        var classAttribute = 'nav nav-pills';
 
-    this.outerHTML =
-      `<ul ${classAttribute}>
+        if (stacked === 'true') {
+            classAttribute += ' nav-stacked';
+        }
+
+        if (justified === 'true') {
+            classAttribute += ' nav-justified';
+        }
+
+        classAttribute = `class="${classAttribute}"`;
+
+        this.outerHTML =
+            `<ul ${classAttribute}>
          ${content}
        </ul>`;
-  }
+    }
 }
 
 class NavPill extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var active = this.getAttribute('active') || 'false';
-    var disabled = this.getAttribute('disabled') || 'false';
-    var classAttribute = '';
-
-    if (active === 'true') {
-      classAttribute = 'active';
+    constructor() {
+        super();
     }
 
-    if (disabled === 'true') {
-      classAttribute += ' disabled';
-    }
+    createdCallback() {
+        var href = this.getAttribute('href') || '#';
+        var active = this.getAttribute('active') || 'false';
+        var disabled = this.getAttribute('disabled') || 'false';
+        var classAttribute = '';
 
-    classAttribute = ` class="${classAttribute.trim()}"`;
+        if (active === 'true') {
+            classAttribute = 'active';
+        }
 
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<li role="presentation"${classAttribute}>
+        if (disabled === 'true') {
+            classAttribute += ' disabled';
+        }
+
+        classAttribute = ` class="${classAttribute.trim()}"`;
+
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<li role="presentation"${classAttribute}>
          <a href="${href}">${content}</a>
        </li>`;
-  }
+    }
 }
 
 class NavPillDropdown extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let title = this.getAttribute('title') || '';
-    let href = this.getAttribute('href') || '#';
-    let content = this.innerHTML;
+    createdCallback() {
+        let title = this.getAttribute('title') || '';
+        let href = this.getAttribute('href') || '#';
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<li role="presentation} class="dropdown">
+        this.outerHTML =
+            `<li role="presentation} class="dropdown">
          <a class="dropdown-toggle" data-toggle="dropdown" href="${href}" role="button" aria-haspopup="true" aria-expanded="false">
            ${title} <span class="caret"></span>
          </a>
@@ -527,77 +527,78 @@ class NavPillDropdown extends HTMLElement {
            ${content}
          </ul>
        </li>`;
-  }
+    }
 }
 
 class NavbarTabs extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {1
-    var justified = this.getAttribute('justified') || 'false';
-    var content = this.innerHTML;
-
-    var classAttribute = 'nav nav-tabs';
-
-    if (justified === 'true') {
-      classAttribute += ' nav-justified';
+    constructor() {
+        super();
     }
 
-    classAttribute = `class="${classAttribute}"`;
+    createdCallback() {
+        1
+        var justified = this.getAttribute('justified') || 'false';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<ul ${classAttribute}>
+        var classAttribute = 'nav nav-tabs';
+
+        if (justified === 'true') {
+            classAttribute += ' nav-justified';
+        }
+
+        classAttribute = `class="${classAttribute}"`;
+
+        this.outerHTML =
+            `<ul ${classAttribute}>
          ${content}
        </ul>`;
-  }
+    }
 }
 
 class NavTab extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var active = this.getAttribute('active') || 'false';
-    var disabled = this.getAttribute('disabled') || 'false';
-    var classAttribute = '';
-
-    if (active === 'true') {
-      classAttribute = 'active';
+    constructor() {
+        super();
     }
 
-    if (disabled === 'true') {
-      classAttribute = ' disabled';
-    }
+    createdCallback() {
+        var href = this.getAttribute('href') || '#';
+        var active = this.getAttribute('active') || 'false';
+        var disabled = this.getAttribute('disabled') || 'false';
+        var classAttribute = '';
 
-    classAttribute = ` class="${classAttribute.trim()}"`;
+        if (active === 'true') {
+            classAttribute = 'active';
+        }
 
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<li role="presentation"${classAttribute}>
+        if (disabled === 'true') {
+            classAttribute = ' disabled';
+        }
+
+        classAttribute = ` class="${classAttribute.trim()}"`;
+
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<li role="presentation"${classAttribute}>
          <a href="${href}">${content}</a>
        </li>`;
-  }
+    }
 }
 
 class NavTabDropdown extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let title = this.getAttribute('title') || '';
-    let href = this.getAttribute('href') || '#';
-    let content = this.innerHTML;
+    createdCallback() {
+        let title = this.getAttribute('title') || '';
+        let href = this.getAttribute('href') || '#';
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<li role="presentation} class="dropdown">
+        this.outerHTML =
+            `<li role="presentation} class="dropdown">
          <a class="dropdown-toggle" data-toggle="dropdown" href="${href}" role="button" aria-haspopup="true" aria-expanded="false">
            ${title} <span class="caret"></span>
          </a>
@@ -605,123 +606,123 @@ class NavTabDropdown extends HTMLElement {
            ${content}
          </ul>
        </li>`;
-  }
+    }
 }
 
 class DropdownItem extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let href = this.getAttribute('href') || '#';
-    let content = this.innerHTML;
-    this.outerHTML =
-      `<li><a href="${href}">${content}</a></li>`;
-  }
+    createdCallback() {
+        let href = this.getAttribute('href') || '#';
+        let content = this.innerHTML;
+        this.outerHTML =
+            `<li><a href="${href}">${content}</a></li>`;
+    }
 }
 
 class LinkListGroup extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let content = this.innerHTML;
+    createdCallback() {
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="list-group">
+        this.outerHTML =
+            `<div class="list-group">
          ${content}
        </div>`;
-  }
+    }
 }
 
 class LinkListGroupItem extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    let href = this.getAttribute('href') || '#';
-    let active = this.getAttribute('active') || 'false';
-    let content = this.innerHTML;
-    var classAttribute = "list-group-item";
-
-    if (active ==='true') {
-      classAttribute = `${classAttribute} active`;
+    constructor() {
+        super();
     }
 
-    classAttribute = ` class="${classAttribute}"`;
-    this.outerHTML =
-      `<a href="${href}"${classAttribute}>${content}</a>`;
-  }
+    createdCallback() {
+        let href = this.getAttribute('href') || '#';
+        let active = this.getAttribute('active') || 'false';
+        let content = this.innerHTML;
+        var classAttribute = "list-group-item";
+
+        if (active === 'true') {
+            classAttribute = `${classAttribute} active`;
+        }
+
+        classAttribute = ` class="${classAttribute}"`;
+        this.outerHTML =
+            `<a href="${href}"${classAttribute}>${content}</a>`;
+    }
 }
 
 class ListGroup extends HTMLElement {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let content = this.innerHTML;
+    createdCallback() {
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<ul class="list-group">
+        this.outerHTML =
+            `<ul class="list-group">
          ${content}
        </ul>`;
-  }
+    }
 }
 
 class ListGroupItem extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    let content = this.innerHTML;
+    createdCallback() {
+        let content = this.innerHTML;
 
-    this.outerHTML =
-      `<li class="list-group-item">${content}</li>`;
-  }
+        this.outerHTML =
+            `<li class="list-group-item">${content}</li>`;
+    }
 }
 
 class NavbarForm extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var placeholderText = this.getAttribute('placeholder-text') || '';
-    var buttonText = this.getAttribute('button-text') || '';
+    createdCallback() {
+        var placeholderText = this.getAttribute('placeholder-text') || '';
+        var buttonText = this.getAttribute('button-text') || '';
 
-    this.outerHTML =
-      `<form class="navbar-form navbar-left">
+        this.outerHTML =
+            `<form class="navbar-form navbar-left">
          <div class="form-group">
            <input type="text" class="form-control" placeholder="${placeholderText}">
          </div>
          <button type="submit" class="btn btn-default">${buttonText}</button>
        </form>`;
-  }
+    }
 
 }
 
 class NavbarDropdown extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var title = this.getAttribute('title') || '';
-    var content = this.innerHTML;
+    createdCallback() {
+        var title = this.getAttribute('title') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<ul class="nav navbar-nav">
+        this.outerHTML =
+            `<ul class="nav navbar-nav">
          <li class="dropdown">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true
              aria-expanded="false">${title} <span class="caret"></span></a>
@@ -730,91 +731,91 @@ class NavbarDropdown extends HTMLElement {
            </ul>
          </li>
        </ul>`;
-  }
+    }
 
 }
 
 class NavbarButton extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<button type="button" class="btn btn-default navbar-btn">${content}</button>`;
-  }
+        this.outerHTML =
+            `<button type="button" class="btn btn-default navbar-btn">${content}</button>`;
+    }
 
 }
 
 class NavbarText extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<p class="navbar-text">${content}</p>`
-  }
+        this.outerHTML =
+            `<p class="navbar-text">${content}</p>`
+    }
 
 }
 
 class NavbarLink extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var alignment = this.getAttribute('alignment') || '';
-    var linkText = this.getAttribute('link-text') || '';
-
-    var classAttribute = "navbar-text";
-
-    if (position !== '') {
-      classAttribute += ` navbar-${alignment}`;
+    constructor() {
+        super();
     }
 
-    classAttribute = `class="${classAttribute}"`;
+    createdCallback() {
+        var href = this.getAttribute('href') || '#';
+        var alignment = this.getAttribute('alignment') || '';
+        var linkText = this.getAttribute('link-text') || '';
 
-    this.outerHTML =
-      `<p ${classAttribute}>${content}<a href="${href}" class="navbar-link">${link-text}</a></p>`;
-  }
+        var classAttribute = "navbar-text";
+
+        if (position !== '') {
+            classAttribute += ` navbar-${alignment}`;
+        }
+
+        classAttribute = `class="${classAttribute}"`;
+
+        this.outerHTML =
+            `<p ${classAttribute}>${content}<a href="${href}" class="navbar-link">${link - text}</a></p>`;
+    }
 
 }
 
 class DropDownHeader extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<li class="dropdown-header">${content}</li>`;
-  }
+    createdCallback() {
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<li class="dropdown-header">${content}</li>`;
+    }
 
 }
 
 class Dropup extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var id = this.getAttribute('id') || '';
-    var title = this.getAttribute('title') || '';
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<div class="dropup">
+    createdCallback() {
+        var id = this.getAttribute('id') || '';
+        var title = this.getAttribute('title') || '';
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<div class="dropup">
          <button class="btn btn-default dropdown-toggle" type="button" id="${id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
            ${title}
            <span class="caret"></span>
@@ -823,21 +824,21 @@ class Dropup extends HTMLElement {
            ${content}
          </ul>
        </div>`;
-  }
+    }
 }
 
 class Dropdown extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var id = this.getAttribute('id') || '';
-    var title = this.getAttribute('title') || '';
-    var content = this.innerHTML;
-    this.outerHTML =
-      `<div class="dropdown">
+    createdCallback() {
+        var id = this.getAttribute('id') || '';
+        var title = this.getAttribute('title') || '';
+        var content = this.innerHTML;
+        this.outerHTML =
+            `<div class="dropdown">
          <button class="btn btn-default dropdown-toggle" type="button" id="${id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
            ${title}
            <span class="caret"></span>
@@ -846,348 +847,348 @@ class Dropdown extends HTMLElement {
            ${content}
          </ul>
        </div>`;
-  }
+    }
 }
 
 class Jumbotron extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="jumbotron">
+        this.outerHTML =
+            `<div class="jumbotron">
         ${content}
       </div>`;
-  }
+    }
 }
 
 class Pager extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var ariaLabel = this.getAttribute('aria-label') || '';
-    var content = this.innerHTML;
+    createdCallback() {
+        var ariaLabel = this.getAttribute('aria-label') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<nav aria-label="${ariaLabel}">
+        this.outerHTML =
+            `<nav aria-label="${ariaLabel}">
         <ul class="pager">
           ${content}
         </ul>
       </nav>`;
-  }
+    }
 }
 
 class PagerPrevious extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var sideAlign = this.getAttribute('side-align') || '';
-    var showArrow = this.getAttribute('show-arrow') || '';
-    var href = this.getAttribute('href') || '#';
-    var disabled = this.getAttribute('disabled') || '';
-    var content = this.innerHTML;
-    var showArrowContent = '';
-
-    if (showArrow === 'true') {
-      showArrowContent = '<span aria-hidden="true">&larr;</span>'
+    constructor() {
+        super();
     }
 
-    var classAttribute = '';
+    createdCallback() {
+        var sideAlign = this.getAttribute('side-align') || '';
+        var showArrow = this.getAttribute('show-arrow') || '';
+        var href = this.getAttribute('href') || '#';
+        var disabled = this.getAttribute('disabled') || '';
+        var content = this.innerHTML;
+        var showArrowContent = '';
 
-    if (sideAlign === 'true') {
-      classAttribute = 'previous ';
-    }
+        if (showArrow === 'true') {
+            showArrowContent = '<span aria-hidden="true">&larr;</span>'
+        }
 
-    if (disabled === 'true') {
-      classAttribute += 'disabled ';
-    }
+        var classAttribute = '';
 
-    classAttribute = ` class="${classAttribute.trim()}"`;
+        if (sideAlign === 'true') {
+            classAttribute = 'previous ';
+        }
 
-    this.outerHTML =
-      `<li${classAttribute}>
+        if (disabled === 'true') {
+            classAttribute += 'disabled ';
+        }
+
+        classAttribute = ` class="${classAttribute.trim()}"`;
+
+        this.outerHTML =
+            `<li${classAttribute}>
         <a href="${href}">${showArrowContent}${content}</a>
       </li>`;
-  }
+    }
 }
 
 class PagerNext extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var sideAlign = this.getAttribute('side-align') || '';
-    var showArrow = this.getAttribute('show-arrow') || '';
-    var href = this.getAttribute('href') || '#';
-    var disabled = this.getAttribute('disabled') || '';
-    var content = this.innerHTML;
-    var showArrowContent = '';
-
-    if (showArrow === 'true') {
-      showArrowContent = '<span aria-hidden="true">&rarr;</span>'
+    constructor() {
+        super();
     }
 
-    var classAttribute = '';
+    createdCallback() {
+        var sideAlign = this.getAttribute('side-align') || '';
+        var showArrow = this.getAttribute('show-arrow') || '';
+        var href = this.getAttribute('href') || '#';
+        var disabled = this.getAttribute('disabled') || '';
+        var content = this.innerHTML;
+        var showArrowContent = '';
 
-    if (sideAlign === 'true') {
-      classAttribute = 'next ';
-    }
+        if (showArrow === 'true') {
+            showArrowContent = '<span aria-hidden="true">&rarr;</span>'
+        }
 
-    if (disabled === 'true') {
-      classAttribute += 'disabled ';
-    }
+        var classAttribute = '';
 
-    classAttribute = ` class="${classAttribute.trim()}"`;
+        if (sideAlign === 'true') {
+            classAttribute = 'next ';
+        }
 
-    this.outerHTML =
-      `<li${classAttribute}>
+        if (disabled === 'true') {
+            classAttribute += 'disabled ';
+        }
+
+        classAttribute = ` class="${classAttribute.trim()}"`;
+
+        this.outerHTML =
+            `<li${classAttribute}>
         <a href="${href}">${content}${showArrowContent}</a>
       </li>`;
-  }
+    }
 }
 
 class Panel extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var panelType = this.getAttribute('panel-type') || '';
-    var content = this.innerHTML;
-
-    var classAttribute = "panel";
-
-    switch(panelType) {
-      case "primary":
-      classAttribute = `${classAttribute} panel-primary`;
-        break;
-      case "success":
-      classAttribute = `${classAttribute} panel-success`;
-        break;
-      case "info":
-      classAttribute = `${classAttribute} panel-info`;
-        break;
-      case "warning":
-      classAttribute = `${classAttribute} panel-warning`;
-        break;
-      case "danger":
-      classAttribute = `${classAttribute} panel-danger`;
-        break;
-      default:
-        classAttribute = `${classAttribute} panel-default`;
-        break;
+    constructor() {
+        super();
     }
 
-    classAttribute = `class="${classAttribute}"`;
+    createdCallback() {
+        var panelType = this.getAttribute('panel-type') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div ${classAttribute}>
+        var classAttribute = "panel";
+
+        switch (panelType) {
+            case "primary":
+                classAttribute = `${classAttribute} panel-primary`;
+                break;
+            case "success":
+                classAttribute = `${classAttribute} panel-success`;
+                break;
+            case "info":
+                classAttribute = `${classAttribute} panel-info`;
+                break;
+            case "warning":
+                classAttribute = `${classAttribute} panel-warning`;
+                break;
+            case "danger":
+                classAttribute = `${classAttribute} panel-danger`;
+                break;
+            default:
+                classAttribute = `${classAttribute} panel-default`;
+                break;
+        }
+
+        classAttribute = `class="${classAttribute}"`;
+
+        this.outerHTML =
+            `<div ${classAttribute}>
         ${content}
       </div>`
-  }
+    }
 
 }
 
 class PanelBody extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="panel-body">
+        this.outerHTML =
+            `<div class="panel-body">
         ${content}
       </div>`
-  }
+    }
 }
 
 class PanelFooter extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="panel-footer">
+        this.outerHTML =
+            `<div class="panel-footer">
         ${content}
       </div>`
-  }
+    }
 }
 
 class PanelHeading extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div class="panel-heading">
+        this.outerHTML =
+            `<div class="panel-heading">
         ${content}
       </div>`
-  }
+    }
 }
 
 class PanelTitle1 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h1 class="panel-title">
+        this.outerHTML =
+            `<h1 class="panel-title">
         ${content}
       </h1>`
-  }
+    }
 }
 
 class PanelTitle2 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h2 class="panel-title">
+        this.outerHTML =
+            `<h2 class="panel-title">
         ${content}
       </h2>`
-  }
+    }
 }
 
 class PanelTitle3 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h3 class="panel-title">
+        this.outerHTML =
+            `<h3 class="panel-title">
         ${content}
       </h3>`
-  }
+    }
 }
 
 class PanelTitle4 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h4 class="panel-title">
+        this.outerHTML =
+            `<h4 class="panel-title">
         ${content}
       </h4>`
-  }
+    }
 }
 
 class PanelTitle5 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h5 class="panel-title">
+        this.outerHTML =
+            `<h5 class="panel-title">
         ${content}
       </h5>`
-  }
+    }
 }
 
 class PanelTitle6 extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var content = this.innerHTML;
+    createdCallback() {
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<h6 class="panel-title">
+        this.outerHTML =
+            `<h6 class="panel-title">
         ${content}
       </h6>`
-  }
+    }
 }
 
 class Thumbnail extends HTMLElement {
 
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  createdCallback() {
-    var href = this.getAttribute('href') || '#';
-    var src = this.getAttribute('src') || '';
-    var alt = this.getAttribute('alt') || '';
+    createdCallback() {
+        var href = this.getAttribute('href') || '#';
+        var src = this.getAttribute('src') || '';
+        var alt = this.getAttribute('alt') || '';
 
-    this.outerHTML =
-      `<a href="${href}" class="thumbnail">
+        this.outerHTML =
+            `<a href="${href}" class="thumbnail">
         <img src="${src}" alt="${alt}">
       </a>`
-  }
+    }
 }
 
 class Well extends HTMLElement {
 
-  constructor() {
-    super();
-  }
-
-  createdCallback() {
-    var wellSize = this.getAttribute('well-size') || '';
-    var content = this.innerHTML;
-
-    var classAttribute = "well";
-
-    if (wellSize === 'small') {
-      classAttribute = `${classAttribute} well-sm`;
-    } else if (wellSize === 'large') {
-      classAttribute = `${classAttribute} well-lg`;
+    constructor() {
+        super();
     }
 
-    classAttribute = `class="${classAttribute}"`;
+    createdCallback() {
+        var wellSize = this.getAttribute('well-size') || '';
+        var content = this.innerHTML;
 
-    this.outerHTML =
-      `<div ${classAttribute}>
+        var classAttribute = "well";
+
+        if (wellSize === 'small') {
+            classAttribute = `${classAttribute} well-sm`;
+        } else if (wellSize === 'large') {
+            classAttribute = `${classAttribute} well-lg`;
+        }
+
+        classAttribute = `class="${classAttribute}"`;
+
+        this.outerHTML =
+            `<div ${classAttribute}>
         ${content}
       </div>`;
-  }
+    }
 }
 
 document.registerElement('x-alert', Alert);
