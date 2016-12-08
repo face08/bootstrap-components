@@ -537,7 +537,6 @@ class NavbarTabs extends HTMLElement {
     }
 
     createdCallback() {
-        1
         var justified = this.getAttribute('justified') || 'false';
         var content = this.innerHTML;
 

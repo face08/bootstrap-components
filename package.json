@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/rnowley/bootstrap-components#readme",
   "devDependencies": {
+    "rollup": "^0.36.4",
     "rollup-plugin-commonjs": "^5.0.5",
     "rollup-plugin-eslint": "^3.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
