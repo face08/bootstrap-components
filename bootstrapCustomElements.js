@@ -1173,7 +1173,7 @@ class Well extends HTMLElement {
         var wellSize = this.getAttribute('well-size') || '';
         var content = this.innerHTML;
 
-        var classAttribute = "well";
+        var classAttribute = 'well';
 
         if (wellSize === 'small') {
             classAttribute = `${classAttribute} well-sm`;

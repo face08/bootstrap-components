@@ -79,6 +79,16 @@
         <h1>Hello World</h1>
         <p>This is a demo jumbotron-style component</p>
       </x-jumbotron>
+      <x-input-group>
+        <x-dropdown-addon id="basic-addon1" button-label="Action">
+            <x-dropdown-item href="#">Action</x-dropdown-item>
+            <x-dropdown-item href="#">Another Action</x-dropdown-item>
+            <x-dropdown-item href="#">Something else here</x-dropdown-item>
+            <x-divider></x-divider>
+            <x-dropdown-item href="#">Separated link</x-dropdown-item>
+        </x-dropdown-addon>
+        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+      </x-input-group>
       <x-pager>
         <x-pager-previous show-arrow="true">Previous</x-pager-previous>
         <x-pager-next show-arrow="true">Next</x-pager-next>
